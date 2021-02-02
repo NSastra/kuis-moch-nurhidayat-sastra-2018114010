@@ -66,7 +66,8 @@ class MahasiswaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $Mahasiswa = Mahasiswa::where('id', $id)->first();
+        return view('mahasiswa.edit', ['Mahasiswa' => $Mahasiswa]);
     }
 
     /**
@@ -86,7 +87,7 @@ class MahasiswaController extends Controller
         ]);
 
         Mahasiswa::find($id)->update([
-            'nama_mahasiswa' => $request->nama_mahasiwa,
+            'nama_mahasiswa' => $request->nama_mahasiswa,
             'alamat' => $request->alamat,
             'no_tlp' => $request->no_tlp,
             'email' => $request->email

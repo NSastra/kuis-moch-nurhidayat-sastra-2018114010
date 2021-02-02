@@ -41,9 +41,9 @@
 
                     <td> {{ $matkul['nama_matakuliah'] }} </td>
                     <td> {{ $matkul['sks'] }} </td>
-                    <td> <a href="/mahasiswa/{{ $matkul['id'] }}/edit">Edit Data
+                    <td> <a href="/matkul/{{ $matkul['id'] }}/edit">Edit Data
                     </td>
-                    <td> <form action="/mahasiswa/{{ $matkul['id'] }}" method="post">
+                    <td> <form action="/matkul/{{ $matkul['id'] }}" method="post">
                        @csrf
                       @method('DELETE')
                       <button class="card-link btn-danger">Hapus Data</button> </td>

@@ -17,13 +17,7 @@ use App\Http\Controllers\MatkulController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('', [LayoutController::class, 'index']);
-
-//Route::post('/mahasiswa', [MahasiswaController::class, 'store']);
 
 Route::resources([
     'mahasiswa' => MahasiswaController::class,

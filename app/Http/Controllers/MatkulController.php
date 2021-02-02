@@ -64,7 +64,8 @@ class MatkulController extends Controller
      */
     public function edit($id)
     {
-        //
+        $Matkul = Matkul::where('id', $id)->first();
+        return view('matkul.edit', ['Matkul' => $Matkul]);
     }
 
     /**
@@ -76,7 +77,7 @@ class MatkulController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Matkul::find($id)->validate([
+        $request->validate([
             'nama_matakuliah' => 'required',
             'sks' => 'required'
         ]);

@@ -66,7 +66,8 @@ class AbsenController extends Controller
      */
     public function edit($id)
     {
-        //
+        $Absen = Absen::where('id', $id)->first();
+        return view('absen.edit', ['Absen' => $Absen]);
     }
 
     /**
@@ -78,7 +79,7 @@ class AbsenController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Absen::find($id)->validat([
+        $request->validate([
             'waktu_absen' => 'required',
             'mahasiswa_id' => 'required',
             'matkul_id' => 'required',
